@@ -5,20 +5,19 @@ import { CreateCategories1673008287995 } from './migrations/1673008287995-Create
 
 const AppDataSource = new DataSource({
   type: "postgres",
-  host: "database",
+  host: "database_ignite",
   port: 5432,
   username: "docker",
   password: "ignite",
   database: "rentalx",
-  synchronize: false,
-  logging: false,
   entities: [Category],
   migrations: [CreateCategories1673008287995],
-  subscribers: [],
 })
 
-export function createConnection(host = "database"): Promise<DataSource> {
-  return AppDataSource.setOptions({ host }).initialize();
-}
+AppDataSource.initialize()
+  .then(() => {
+      console.log("Initialized");
+  })
+  .catch((error) => console.log(error))
 
 export default AppDataSource
