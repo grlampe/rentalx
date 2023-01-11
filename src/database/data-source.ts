@@ -1,6 +1,8 @@
 import { DataSource } from "typeorm"
 import { Category } from "../modules/cars/entities/Category";
+import { Specification } from "../modules/cars/entities/Specification";
 import { CreateCategories1673008287995 } from './migrations/1673008287995-CreateCategories'
+import { CreateSpecifications1673437984780 } from "./migrations/1673437984780-CreateSpecifications";
 
 
 const AppDataSource = new DataSource({
@@ -10,8 +12,8 @@ const AppDataSource = new DataSource({
   username: "docker",
   password: "ignite",
   database: "rentalx",
-  entities: [Category],
-  migrations: [CreateCategories1673008287995],
+  entities: [Category, Specification],
+  migrations: [CreateCategories1673008287995, CreateSpecifications1673437984780],
 })
 
 AppDataSource.initialize()
