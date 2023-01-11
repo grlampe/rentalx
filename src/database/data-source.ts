@@ -1,8 +1,11 @@
 import { DataSource } from "typeorm"
+import { User } from "../modules/account/entities/User";
 import { Category } from "../modules/cars/entities/Category";
 import { Specification } from "../modules/cars/entities/Specification";
 import { CreateCategories1673008287995 } from './migrations/1673008287995-CreateCategories'
 import { CreateSpecifications1673437984780 } from "./migrations/1673437984780-CreateSpecifications";
+import { CreateUsers1673457397613 } from "./migrations/1673457397613-CreateUsers";
+import { AlterUserDeleteUsername1673460295780 } from "./migrations/1673460295780-AlterUserDeleteUsername";
 
 
 const AppDataSource = new DataSource({
@@ -12,8 +15,8 @@ const AppDataSource = new DataSource({
   username: "docker",
   password: "ignite",
   database: "rentalx",
-  entities: [Category, Specification],
-  migrations: [CreateCategories1673008287995, CreateSpecifications1673437984780],
+  entities: [User, Category, Specification],
+  migrations: [CreateCategories1673008287995, CreateSpecifications1673437984780, CreateUsers1673457397613, AlterUserDeleteUsername1673460295780],
 })
 
 AppDataSource.initialize()
