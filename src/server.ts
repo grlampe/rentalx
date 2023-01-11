@@ -2,6 +2,7 @@ import express from 'express';
 import { router } from './routes';
 import swaggerUI from 'swagger-ui-express';
 import swaggerFile from './swagger.json';
+import "./shared/container";
 
 const port = 3333;
 const app = express();

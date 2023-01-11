@@ -1,16 +1,18 @@
 import { Router } from 'express';
+import "reflect-metadata";
+import { CreateSpecificationController } from '../modules/cars/useCases/createSpecification/CreateSpecificationController';
+import { ListSpecificationsController } from '../modules/cars/useCases/listSpecifications/ListSpecificationsController';
 
-import createSpecificationController from '../modules/cars/useCases/createSpecification';
-import listSpecificationController from '../modules/cars/useCases/listSpecifications';
+//import createSpecificationController from '../modules/cars/useCases/createSpecification';
+//import listSpecificationController from '../modules/cars/useCases/listSpecifications';
 
 const specificationsRoutes = Router();
 
-specificationsRoutes.post('/', (request, response) => {
-  return createSpecificationController().handle(request, response);
-});
+const createSpecificationController = new CreateSpecificationController();
+const listSpecificationController = new ListSpecificationsController();
 
-specificationsRoutes.get('/', (request, response) => {
-  return listSpecificationController().handle(request, response);
-});
+specificationsRoutes.post('/', createSpecificationController.handle);
+
+specificationsRoutes.get('/', listSpecificationController.handle);
 
 export { specificationsRoutes };
