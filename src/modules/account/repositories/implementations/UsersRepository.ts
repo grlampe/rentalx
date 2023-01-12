@@ -9,7 +9,8 @@ export class UsersRepository implements IUsersRepository {
   
   constructor() {
     this.repository = AppDataSource.getRepository(User) 
-  };
+  }
+;
 
   async create({ name, password, email, driver_license }: ICreateUserDTO): Promise<void> {
     const user = this.repository.create({ 
@@ -23,9 +24,14 @@ export class UsersRepository implements IUsersRepository {
   }
 
   async findByEmail(email: string): Promise<User> {
-    const user = await this.repository.findOne({where: { email: email}});
+    const user = await this.repository.findOne({ where: { email: email } });
 
     return user;
   }
 
+  async findByID(id: string): Promise<User> {
+    const user = await this.repository.findOne({ where: { id: id } });
+
+    return user;
+  }
 }
