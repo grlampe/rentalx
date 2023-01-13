@@ -6,6 +6,7 @@ import { CreateCategories1673008287995 } from './migrations/1673008287995-Create
 import { CreateSpecifications1673437984780 } from "./migrations/1673437984780-CreateSpecifications";
 import { CreateUsers1673457397613 } from "./migrations/1673457397613-CreateUsers";
 import { AlterUserDeleteUsername1673460295780 } from "./migrations/1673460295780-AlterUserDeleteUsername";
+import { AlterUserAddAvatarColumn1673564546909 } from "./migrations/1673564546909-AlterUserAddAvatarColumn";
 
 
 const AppDataSource = new DataSource({
@@ -16,7 +17,13 @@ const AppDataSource = new DataSource({
   password: "ignite",
   database: "rentalx",
   entities: [User, Category, Specification],
-  migrations: [CreateCategories1673008287995, CreateSpecifications1673437984780, CreateUsers1673457397613, AlterUserDeleteUsername1673460295780],
+  migrations: [
+    CreateCategories1673008287995, 
+    CreateSpecifications1673437984780, 
+    CreateUsers1673457397613, 
+    AlterUserDeleteUsername1673460295780, 
+    AlterUserAddAvatarColumn1673564546909
+  ],
 })
 
 AppDataSource.initialize()
