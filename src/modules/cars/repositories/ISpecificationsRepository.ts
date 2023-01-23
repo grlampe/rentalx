@@ -1,4 +1,4 @@
-import { Specification } from "../entities/Specification";
+import { Specification } from "@modules/cars/entities/Specification";
 
 // DTO => DATA Transfer Object
 export interface ICreateSpecificationDTO {

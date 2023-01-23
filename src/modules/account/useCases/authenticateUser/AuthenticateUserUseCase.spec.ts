@@ -1,7 +1,6 @@
-import { compare, hash } from "bcryptjs";
-import { AppError } from "../../../../errors/AppError";
-import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
-import { UserRepositoryMock } from "../../repositories/mocks/UserRepositoryMock";
+import { AppError } from "@errors/AppError";
+import { ICreateUserDTO } from "@modules/account/dtos/ICreateUserDTO";
+import { UserRepositoryMock } from "@modules/account/repositories/mocks/UserRepositoryMock";
 import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
 
 

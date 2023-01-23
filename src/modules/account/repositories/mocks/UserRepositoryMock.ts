@@ -1,7 +1,7 @@
 import { hash } from "bcryptjs";
-import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
-import { User } from "../../entities/User";
-import { IUsersRepository } from "../IUsersRepository";
+import { ICreateUserDTO } from "@modules/account/dtos/ICreateUserDTO";
+import { User } from "@modules/account/entities/User";
+import { IUsersRepository } from "@modules/account/repositories/IUsersRepository";
 
 export class UserRepositoryMock implements IUsersRepository {
   users: User[] = [];

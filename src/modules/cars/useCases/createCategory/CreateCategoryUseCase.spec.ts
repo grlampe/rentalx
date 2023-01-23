@@ -1,7 +1,7 @@
-import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
-import { CategoriesRepositoryMock } from "./../../repositories/mocks/CategoriesRepositoryMock"
+import { CreateCategoryUseCase } from "@modules/cars/useCases/createCategory/CreateCategoryUseCase";
+import { CategoriesRepositoryMock } from "@modules/cars/repositories/mocks/CategoriesRepositoryMock"
 import "reflect-metadata";
-import { AppError } from "../../../../errors/AppError";
+import { AppError } from "@errors/AppError";
 
 
 let createCategoryUseCase: CreateCategoryUseCase;

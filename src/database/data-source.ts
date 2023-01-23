@@ -1,7 +1,7 @@
 import { DataSource } from "typeorm"
-import { User } from "../modules/account/entities/User";
-import { Category } from "../modules/cars/entities/Category";
-import { Specification } from "../modules/cars/entities/Specification";
+import { User } from "@modules/account/entities/User";
+import { Category } from "@modules/cars/entities/Category";
+import { Specification } from "@modules/cars/entities/Specification";
 import { CreateCategories1673008287995 } from './migrations/1673008287995-CreateCategories'
 import { CreateSpecifications1673437984780 } from "./migrations/1673437984780-CreateSpecifications";
 import { CreateUsers1673457397613 } from "./migrations/1673457397613-CreateUsers";
